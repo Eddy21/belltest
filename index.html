@@ -1,0 +1,66 @@
+<html>
+    <head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
+<script src="script.js"></script> 
+</head>   
+<body ng-app="myApp" ng-controller="myCtrl">
+        <h1>PRUEBA BELLATRIX</h1>
+        <h2>DEPARTAMENTO</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Codigo Padre</th>
+                    <th>Descripción Padre</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr ng-repeat="d in data.dep">
+                    <td>{{d.id}}</td>
+                    <td>{{d.name}}</td>
+                    <td>-</td>
+                    <td>-</td>   
+                </tr>   
+            </tbody>
+        </table>
+        <h2>PROVINCIA</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Codigo Padre</th>
+                    <th>Descripción Padre</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="dep in data.dep">
+                <tr ng-repeat="prov in dep.prov">
+                    <td>{{prov.id}}</td>
+                    <td>{{prov.name}}</td>
+                    <td>{{dep.id}}</td>
+                    <td>{{dep.name}}</td>   
+                </tr>    
+            </tbody>
+        </table>
+        <h2>DISTRITO</h2>
+        <table >
+            <thead ng-repeat-start="dep in data.dep track by $index">
+                <tr ng-if="$index==0">
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Codigo Padre</th>
+                    <th>Descripción Padre</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat-end ng-repeat="prov in dep.prov">
+                <tr ng-repeat="dis in prov.dis">
+                    <td>{{dis.id}}</td>
+                    <td>{{dis.name}}</td>
+                    <td>{{prov.id}}</td>
+                    <td>{{prov.name}}</td>   
+                </tr>    
+            </tbody>
+        </table>
+    </body>
+</html>

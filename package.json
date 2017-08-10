@@ -1,0 +1,16 @@
+{
+  "name": "bellatrix-project",
+  "version": "1.0.0",
+  "description": "A simple project for bellatrix exam",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "stop":""
+  },
+  "dependencies": {
+    "connect": "3.6.3",
+    "serve-static": "1.12.4"
+  },
+  "author": "Eddy Flores",
+  "license": "ISC"
+}
