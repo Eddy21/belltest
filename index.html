@@ -1,12 +1,19 @@
 <html>
     <head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
 <script src="script.js"></script> 
 </head>   
 <body ng-app="myApp" ng-controller="myCtrl">
-        <h1>PRUEBA BELLATRIX</h1>
+    <div class="container">
+        <h1 style="text-align:center">PRUEBA BELLATRIX</h1>
         <h2>DEPARTAMENTO</h2>
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Código</th>
@@ -25,7 +32,7 @@
             </tbody>
         </table>
         <h2>PROVINCIA</h2>
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Código</th>
@@ -44,7 +51,7 @@
             </tbody>
         </table>
         <h2>DISTRITO</h2>
-        <table >
+        <table class="table table-bordered">
             <thead ng-repeat-start="dep in data.dep track by $index">
                 <tr ng-if="$index==0">
                     <th>Código</th>
@@ -62,5 +69,6 @@
                 </tr>    
             </tbody>
         </table>
+    </div>
     </body>
 </html>
